@@ -1,0 +1,233 @@
+/* #bannerImg {
+  width: 800px;
+  height: 360px;
+  margin-top: 30px;
+} */
+
+#bannerImg {
+    width: 600px;
+    height: 270px;
+    margin-top: 30px;
+  }
+
+#bannerWrapper {
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.japaneseText {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  font-size: 80px;
+
+}
+
+.japaneseTextWrapper {
+
+  display: flex;
+  justify-content: center;
+}
+
+/* #ibanezLogo {
+
+  width: 400px;
+  height: 400px;
+
+} */
+
+#ibanezLogo {
+
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:-90px;
+    
+  
+  }
+
+#ibanezLogoWrapper {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  top: -100px;
+    
+
+}
+
+#menuItemsWrapper {
+  z-index: 2;
+  display: flex;
+  justify-content: left;
+  top: -110px;
+  left:-30px;
+}
+
+nav {
+  margin: 0;
+}
+
+nav ul ul {
+  display: none;
+}
+
+
+nav ul .dropdown:hover ul {
+  display: initial;
+}
+
+
+
+nav ul li {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  list-style-type: none;
+  margin-left: 20px;
+
+}
+
+ul li a:hover {
+  font-size: 20px;
+  background-color :rgb(124, 128, 118);
+  padding: 10px;
+  border-radius: 10px 10px 20px 20px;
+  transition: all 0.5s;
+  
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:rgb(54, 54, 39);
+  list-style-type: none;
+  
+}
+
+nav ul li {
+  
+  margin-top: 10px;
+}
+
+nav ul li {
+    position: relative;
+    
+}
+
+nav ul ul {
+    position: absolute;
+    
+    
+}
+.col-3>h4{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+
+}
+
+#boss{
+  margin: 2px;
+  height: 25px;
+  width: 55px;
+}
+
+#diMarzio{
+  margin: 2px;
+height: 25px;
+width: 100px;
+}
+
+#dunlop{
+  margin: 2px;
+  height:25px;
+width: 27px;
+
+}
+
+#elixir{
+  margin: 2px;
+    height:25px;
+  width: 30px;
+  
+  
+}
+
+#vox{
+  margin: 5px;
+  height:25px;
+  width: 50px;
+}
+
+#guitarist {
+  
+  width: 150px;
+  height: 222px;
+  margin-top: 30px;
+
+  
+}
+
+body > div:nth-child(2) > div{
+  height: 100px;
+}
+
+.japaneseText{
+    
+    font-size: 30px;
+}
+
+.welcomeTitle {
+  font-size: 70px;
+}
+
+
+.centerAlign {
+
+  display: flex;
+  justify-content: center;
+  
+}
+
+#stringText {
+  background-color:rgb(124, 128, 118);
+  font-size: 70px;
+  
+  border-radius: 10px 10px 60px 60px;
+  padding: 30px;
+  color:rgb(54, 54, 39);
+
+}
+
+.welcomeFont > p{
+    color:rgb(54, 54, 39);
+
+}
+
+
+#line{
+    font-size: 30px;
+}
+
+#dynaText {
+
+  
+  font-size: 70px;
+  color: black
+}
+.flipped{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.welcomeFont{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+address{
+    font-size: 10px;
+}

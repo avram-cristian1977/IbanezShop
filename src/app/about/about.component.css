@@ -1,0 +1,23 @@
+h5{
+    text-indent: 130px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+}
+h5 span{
+    text-transform:capitalize;
+}
+
+.storePic{
+    height: 200px;
+    width:300px ;
+    box-shadow: 5px 5px 5px 5px rgb(170, 169, 148);
+}
+
+.storePics{
+    margin-top: 20px;
+    
+    margin-bottom: 40px;
+    display: flex;
+    justify-content:space-around;
+   
+}

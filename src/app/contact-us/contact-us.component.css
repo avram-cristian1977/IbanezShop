@@ -1,0 +1,17 @@
+address, p{
+    text-align: center;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+}
+#map{
+    display: flex;
+    justify-content: center;
+}
+
+.map{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    
+}

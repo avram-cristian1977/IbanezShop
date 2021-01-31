@@ -1,0 +1,99 @@
+h3 {
+  font-size: 16px;
+  margin: 30px 0px 30px 0;
+
+}
+
+
+
+.guitaristImg {
+  width: 200px;
+  height: 266px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: px;
+  border: 2px solid rgb(3, 3, 3);
+}
+
+.align {
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h4 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding-top: 0px;
+  margin-right: 0px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.moreText {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+#silhouette1 {
+
+  width: 200px;
+  height: 80px;
+}
+
+.flipped {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.centerAlign {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row p {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.row span {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: start;
+
+
+}
+
+
+.exhibImg {
+  height: 200px;
+  width: 266px;
+}
+
+.exibImgWrapper {
+
+  display: flex;
+  justify-content: center;
+}
+
+.dealerWrapper {
+  width: 300px;
+  border-radius: 5px;
+  background-color: rgb(99, 99, 83);
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.dealerWrapper>div>h6,
+address {
+  font-size: 10px;
+}

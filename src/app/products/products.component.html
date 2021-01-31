@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h2 style="display: flex; justify-content: center;">Sort guitars</h2>
+<div class="sortButtons">
+  <button (click) = "sortByPrice()">Sort Guitars by <span>PRICE</span></button>
+  <button (click) = "sortById()">Sort Guitars by <span>ID</span></button>
+  <button (click) = "filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button>
+  <button (click) = "filterByColorBlacks()">Filter Guitars by <span>color black</span></button>
+</div>
+
+<div class="container">
+  <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <ul *ngFor="let guitar of guitars">
+            <li id="guitarCard">
+      
+              <img src="{{guitar.img}}">
+              <h6>
+                <p>{{guitar.brand}} </p>
+                <p>guitar model {{guitar.model}} </p>
+                <p>guitar type {{guitar.type}} </p>
+                <p>has case{{guitar.hasCase}} </p>
+                <p>number of strings {{guitar.noOfStrings}} </p>
+                <p>color {{guitar.color}} </p>
+                <p>price {{guitar.price}} <span>&euro;</span> </p>
+              </h6>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3"></div>
+  </div>
+</div>
+
+  <div>
+    
+  </div>
+
+
+</body>
+
+</html>
