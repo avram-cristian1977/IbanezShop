@@ -11,6 +11,8 @@ import {HollowBodyComponent} from './hollow-body/hollow-body.component';
 import {BassesComponent} from './basses/basses.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AdminComponent} from './admin/admin.component';
+import {AdminCreateComponent} from "./admin-create/admin-create.component"
+import {UpdateComponent} from './update/update.component'
  
 
 
@@ -25,8 +27,12 @@ const routes: Routes = [
   {path : 'products/classical', component:ClassicalComponent},
   {path : 'products/hollow', component:HollowBodyComponent},
   {path : 'products/basses', component:BassesComponent},
+  {path : 'admin/create', component:AdminCreateComponent},
+  {path : 'admin/update', component:UpdateComponent},
   {path : 'contactUs', component:ContactUsComponent},
   {path : '**', component:PageNotFoundComponent},
+  
+  
 ];
 
 @NgModule({

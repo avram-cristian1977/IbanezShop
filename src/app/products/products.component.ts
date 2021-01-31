@@ -11,13 +11,15 @@ import { GuitarsComponent } from '../guitars/guitars.component';
 export class ProductsComponent implements OnInit {
 
   guitars: any[] = [];
+  search: any[] = [];
+
   filteredByType: any[] = [];
 
   constructor(db: AngularFireDatabase) {
     db.list('/guitars').valueChanges().subscribe(guitars => {
       this.guitars = guitars;
       console.log(this.guitars);
-
+      this.search = guitars;
     });
   }
 
@@ -25,20 +27,19 @@ export class ProductsComponent implements OnInit {
   }
 
   filterByTypeBass() {
-
     this.guitars = this.guitars.filter((guitar) => { return guitar.type == "bass" })
 
     return;
   }
 
   filterByColorBlacks() {
-
     this.guitars = this.guitars.filter((guitar) => { return guitar.color == "black" })
     return;
   }
 
   resetFilter(){
-    
+    this.guitars = this.search;
+    return;
   }
 
 

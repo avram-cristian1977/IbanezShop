@@ -1,1 +1,28 @@
-<h1 style="text-align: center; font-size: 50px;">ADMIN ROUTE CRUD HERE</h1>
+<div class="container">
+    <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <ul *ngFor="let guitar of guitars">
+              <li id="guitarCard" *ngIf="guitar">
+        
+                <img src="{{guitar.img}}" style="width: 100px;">
+                <h6>
+                  <p>{{guitar.brand}} </p>
+                  <p>guitar model {{guitar.model}} </p>
+                  <p>guitar type {{guitar.type}} </p>
+                  <p>has case{{guitar.hasCase}} </p>
+                  <p>number of strings {{guitar.noOfStrings}} </p>
+                  <p>color {{guitar.color}} </p>
+                  <p>price {{guitar.price}} <span>&euro;</span> </p>
+                  <a href="/update/{{ guitar.db_key }}" class='btn btn-info'>Update</a>
+                  <a  class='btn btn-danger' (click) = "deleteGuitar(guitar)">Delete</a>
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3"></div>
+    </div>
+
+    <div class="form-container">
+        <form action=""></form>
+    </div>

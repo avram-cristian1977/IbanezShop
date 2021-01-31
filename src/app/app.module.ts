@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2'; 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,9 @@ import { HollowBodyComponent } from './hollow-body/hollow-body.component';
 import { BassesComponent } from './basses/basses.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminCreateComponent } from './admin-create/admin-create.component';
+import { UpdateComponent } from './update/update.component';
+import { GuitarService } from './guitar.service';
 
 
 @NgModule({
@@ -36,16 +40,19 @@ import { AdminComponent } from './admin/admin.component';
     HollowBodyComponent,
     BassesComponent,
     PageNotFoundComponent,
-    AdminComponent
+    AdminComponent,
+    AdminCreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GuitarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
