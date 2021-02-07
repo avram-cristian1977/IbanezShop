@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { GuitarService } from '../guitar.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-update',
@@ -6,10 +11,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+  guitar: any[];
+  db_key: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private guitarService : GuitarService, private route: ActivatedRoute) { 
   }
+
+  ngOnInit(): void { 
+    this.db_key = this.route.snapshot.paramMap.get('id');
+    this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+    let i = 0;
+    guitars.forEach(guitar => {
+      if (this.db_key == guitar.payload.key) {
+        this.guitar = guitar.payload.val();
+        this.guitar['db_key'] = guitar.payload.key;
+        i++;
+      }
+    }); 
+  });
+  }
+
+  updateGuitar(data: any[]) {
+      this.guitarService.updateGuitar(this.db_key, data);
+  }
+
+
 
 }

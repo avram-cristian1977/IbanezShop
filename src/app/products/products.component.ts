@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Guitar } from '../guitarInterface'
 import { AngularFireDatabase } from 'angularfire2/database';
 import { GuitarsComponent } from '../guitars/guitars.component';
+import { CurrencyService } from '../currency.service';
 
 @Component({
   selector: 'app-products',
@@ -12,16 +13,25 @@ export class ProductsComponent implements OnInit {
 
   guitars: any[] = [];
   search: any[] = [];
+  currency: any;
 
   filteredByType: any[] = [];
 
-  constructor(db: AngularFireDatabase) {
+  constructor(db: AngularFireDatabase, currencyService: CurrencyService) {
+    currencyService.getCurrency('RON').subscribe(currency => {
+      this.currency = currency;
+    });
+    
     db.list('/guitars').valueChanges().subscribe(guitars => {
+      guitars.forEach(guitar => {
+        guitar['priceRON'] = (guitar['price'] * this.currency.rates.RON).toFixed(2); 
+      });
       this.guitars = guitars;
-      console.log(this.guitars);
       this.search = guitars;
     });
   }
+
+  
 
   ngOnInit(): void {
   }

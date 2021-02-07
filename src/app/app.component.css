@@ -5,9 +5,9 @@
 } */
 
 #bannerImg {
-    width: 600px;
-    height: 270px;
-    margin-top: 30px;
+    width: 500px;
+    height: 225px;
+    margin-top: 24px;
   }
 
 #bannerWrapper {
@@ -63,6 +63,17 @@
   left:-30px;
 }
 
+#menuItemsWrapper > nav > ul{
+  padding-left: 0px;
+  padding-top: 30px;
+}
+
+#menuItemsWrapper > nav > ul>li{
+  
+  padding-top: 0px;
+}
+
+
 nav {
   margin: 0;
 }
@@ -74,6 +85,7 @@ nav ul ul {
 
 nav ul .dropdown:hover ul {
   display: initial;
+  
 }
 
 
@@ -86,10 +98,13 @@ nav ul li {
 
 }
 
+ul li a {
+  padding: 7px;
+}
 ul li a:hover {
   font-size: 20px;
   background-color :rgb(124, 128, 118);
-  padding: 10px;
+  padding: 7px;
   border-radius: 10px 10px 20px 20px;
   transition: all 0.5s;
   
@@ -190,10 +205,11 @@ body > div:nth-child(2) > div{
 
 #stringText {
   background-color:rgb(124, 128, 118);
-  font-size: 70px;
+  font-size: 50px;
   
   border-radius: 10px 10px 60px 60px;
-  padding: 30px;
+  
+  padding: 20px;
   color:rgb(54, 54, 39);
 
 }

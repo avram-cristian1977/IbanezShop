@@ -21,14 +21,27 @@ export class AdminComponent implements OnInit {
 
   getGuitarList() {
     this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+      let i = 0;
       guitars.forEach(guitar => {
-        if (guitar.payload.val() !== null) {
-          this.guitars[guitar.payload.key] = guitar.payload.val();
-          this.guitars[guitar.payload.key]['db_key'] = guitar.payload.key;
-        }
+          this.guitars[i] = guitar.payload.val();
+          this.guitars[i]['db_key'] = guitar.payload.key;
+          i++;
       }); 
     })
   }
+  
+  deleteGuitar(key:string):void {
+    let deleteConfirm = confirm("Are you sure you want to delete ?");
+    if (deleteConfirm) {
+      this.guitarService.deleteGuitar(key);
+      this.guitars.forEach((guitar, array_key) => {
+        if (guitar.db_key == key) {
+          this.guitars.splice(array_key, 1);
+        }
+      });
+    }
+  }
+
   ngOnInit() {
     this.getGuitarList();
   }

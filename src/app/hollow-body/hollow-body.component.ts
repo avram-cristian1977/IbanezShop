@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-hollow-body',
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hollow-body.component.css']
 })
 export class HollowBodyComponent implements OnInit {
+  guitars: any[] = [];
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+      
+    db.list('/guitars').valueChanges().subscribe(guitars => {
+      this.guitars = guitars;
+      this.guitars = this.guitars.filter((guitar) => { return guitar.type == "hollow" })
+       console.log("constructor", this.guitars);
+      });
+    }
 
   ngOnInit(): void {
   }

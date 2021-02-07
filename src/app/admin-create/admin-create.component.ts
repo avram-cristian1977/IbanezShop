@@ -23,6 +23,7 @@ export class AdminCreateComponent implements OnInit {
   createGuitar(data) {
     data.id = this.guitars.length > 0 ? Math.max(...this.guitars.map(guitar => guitar.id)) + 1 : 20;
     this.db.list('guitars').push(data);
+    alert('Guitar created.');
     return;
   }
 

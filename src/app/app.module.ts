@@ -24,6 +24,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { UpdateComponent } from './update/update.component';
 import { GuitarService } from './guitar.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { GuitarService } from './guitar.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [GuitarService],
   bootstrap: [AppComponent]

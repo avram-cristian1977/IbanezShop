@@ -28,7 +28,7 @@ const routes: Routes = [
   {path : 'products/hollow', component:HollowBodyComponent},
   {path : 'products/basses', component:BassesComponent},
   {path : 'admin/create', component:AdminCreateComponent},
-  {path : 'admin/update', component:UpdateComponent},
+  {path : 'admin/update/:id', component:UpdateComponent},
   {path : 'contactUs', component:ContactUsComponent},
   {path : '**', component:PageNotFoundComponent},
   

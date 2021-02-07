@@ -14,8 +14,8 @@
                   <p>number of strings {{guitar.noOfStrings}} </p>
                   <p>color {{guitar.color}} </p>
                   <p>price {{guitar.price}} <span>&euro;</span> </p>
-                  <a href="/update/{{ guitar.db_key }}" class='btn btn-info'>Update</a>
-                  <a  class='btn btn-danger' (click) = "deleteGuitar(guitar)">Delete</a>
+                  <a href="admin/update/{{ guitar.db_key }}" class='btn btn-info'>Update</a>
+                  <a  class='btn btn-danger' (click) = "deleteGuitar(guitar.db_key)">Delete</a>
                 </h6>
               </li>
             </ul>
