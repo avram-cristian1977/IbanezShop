@@ -26,6 +26,8 @@
         <div class="col-10">
           <ul *ngFor="let guitar of guitars">
             <li id="guitarCard">
+              <a routerLink="/details/{{guitar.id}}">
+              
       
               <img src="{{guitar.img}}">
               <h6>
@@ -37,6 +39,7 @@
                 <p>color {{guitar.color}} </p>
                 <p>price {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
               </h6>
+            </a>
             </li>
           </ul>
         </div>

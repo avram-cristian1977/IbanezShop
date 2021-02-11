@@ -97,3 +97,51 @@ h4 {
 address {
   font-size: 10px;
 }
+
+@media only screen and (max-width: 376px){
+  #silhouette1{
+    width: 100px;
+    height: 40px;
+  }
+
+ .moreText{
+ display: none;
+ }
+
+ .bigNoDspl{
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0px 20px 0px 20px;
+
+ }
+
+ .align{
+   padding-bottom: 10px;
+ }
+
+}
+.align q {
+  
+  font-size: 15px;
+  padding: 10px;
+}
+
+.align span{
+  font-size: 18px;
+  padding: 10px;
+}
+.exibImgWrapper{
+  margin-top: 20px;
+}
+.dealerWrapper{
+  margin-top: 20px;
+}
+
+
+
+
+@media only screen and (min-width: 1000px){
+  .bigNoDspl{
+    display: none;
+  }
+}

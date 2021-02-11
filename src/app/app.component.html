@@ -9,21 +9,29 @@
 
 <body>
 
+  <!-- <div class="container" style="background-color: rgb(30, 7, 95);">
+    <div class="row" style="background-color: aquamarine;">
+      <div class="col-4 col-sm-6" style="background-color: rgb(255, 127, 234);">col-lg-4</div>
+      <div class="col-4 col-sm-6"  style="background-color: rgb(255, 127, 234);">col-lg-4</div>
+      <div class="col-4 col-sm-6" style="background-color: rgb(255, 127, 234);">col-lg-4</div>
+    </div>
+  </div> -->
+
   
   <!-- part1 -->
   <div class="container">
     <div class="row">
-      <div class="col-2">
+      <div class="col-lg-2 ">
         <div><img [src]="guitarist" id="guitarist" alt=""></div>
       </div>
-      <div class="col-8" id="bannerWrapper">
+      <div class="col-lg-8 " id="bannerWrapper">
         <img [src]="bannerImg" id="bannerImg" alt="">
       </div>
-      <div class="col-2" style="display: flex; justify-content: flex-end;">
+      <div class="col-lg-2 " style="display: flex; justify-content: flex-end;">
         <div><img [src]="guitarist" id="guitarist" class="flipped"  alt=""></div>
       </div>
     </div>
-  </div>
+   </div>
 
     <!-- part2 dropdown -->
     <div class="container">
@@ -31,8 +39,35 @@
         <div class="col-7" style="display: flex; justify-content: flex-end;">
           <img [src]="ibanezLogo" id="ibanezLogo" alt="">
         </div>
+     <!-- 4 small -->
+        <div class="container navSmall">
+          <div class="row">
+            <div class="col-xs-6 ">
+              
+                <ul>
+                  <li><a routerLink="/home">Home</a></li>
+                  <li><a routerLink="/about">About</a></li>
+                  <li><a routerLink="/contactUs">Contact us</a></li>
+                  <li><a  routerLink="/products">Products</a></li>
+                  
+            </ul>
+          </div>
+          <div class="col-xs-6 ">
+            <ul>
+              <li><a routerLink="products/electric">Electric </a></li>
+                  <li><a routerLink="products/acoustic">Acoustic </a></li>
+                  <li><a routerLink="products/classical">Classical </a></li>
+                  <li><a routerLink="products/hollow">Hollow </a></li>
+                  <li><a routerLink="products/basses">Basses</a></li>
+            </ul>
+          </div>
+
+          </div>
+        </div>
+
+        <!-- 4 small -->
   
-        <div class="col-5" id="menuItemsWrapper">
+        <div class="col-5 " id="menuItemsWrapper">
           <nav>
             <ul>
               <li><a routerLink="/home">Home</a></li>
@@ -58,7 +93,7 @@
 
     <!-- part3 -->
     
-  <div class="container">
+  <div class="container smallNoDspl">
     <div class="row">
        
       <div class="col-3">
@@ -67,13 +102,6 @@
            <div><img [src]="dunlop" id="dunlop" alt=""><img [src]="vox" id="vox" alt=""><img [src]="elixir" id="elixir" alt=""></div>
            <div><img [src]="boss" id="boss" alt=""></div>
       </div>
-        
-    
-      
-      
-
-
-
       <div class="col-6">
         <div class=" centerAlign welcomeFont">
           <p style="font-size: 30px;">  <span  ></span  >Welcome to <span id="dynaText">Dyna</span><span id="stringText">string</span> </p>
@@ -87,13 +115,14 @@
       <div class="col-3"></div>
     </div>
   </div>
-  
 
-
-
-
-
-
+  <div class="container bigNoDspl pos">
+    <div class="row">
+      <div class="col-xs-12">
+        <p style="font-size: 20px;">  <span  ></span  >Welcome to <span id="dynaText">Dyna</span><span id="stringText">string</span> </p>
+      </div>
+    </div>
+  </div>
   <router-outlet></router-outlet>
 
 

@@ -25,6 +25,7 @@ import { AdminCreateComponent } from './admin-create/admin-create.component';
 import { UpdateComponent } from './update/update.component';
 import { GuitarService } from './guitar.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     PageNotFoundComponent,
     AdminComponent,
     AdminCreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

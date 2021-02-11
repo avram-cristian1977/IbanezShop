@@ -247,3 +247,99 @@ body > div:nth-child(2) > div{
 address{
     font-size: 10px;
 }
+
+@media only screen and (max-width: 376px) {
+  
+#bannerImg {
+ width: 100px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+#guitarist {
+  display: none;
+ }
+
+
+#bannerWrapper{
+  display: flex;
+  
+}
+
+
+
+body > div > div > div:nth-child(1){
+  display: inline;
+}
+
+#ibanezLogo {
+display: none;
+  }
+  #menuItemsWrapper > nav{
+    display: none;
+  }
+
+  .smallNav{
+    background-color: burlywood;
+    
+  }
+  .navSmall{
+   
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+    
+  }
+
+  .navSmall ul{
+   padding: 0px;
+    text-decoration: none;
+    list-style-type: none;
+    
+  }
+
+  .navSmall a{
+   
+    
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+    
+  }
+
+  .smallNoDspl{
+    display: none;
+  }
+
+  #dynaText{
+    font-size: 30px;
+  }
+#stringText{
+  font-size:30px;
+  border-radius: 5px 5px 30px 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px;
+}
+
+body > div.container.bigNoDspl.pos > div{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+}
+@media only screen and (min-width: 1000px){
+  .container .navSmall{
+    display: none;
+  }
+
+ 
+
+  .bigNoDspl{
+    display: none;
+  }
+}
+

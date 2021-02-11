@@ -23,14 +23,14 @@ export class ProductsComponent implements OnInit {
     });
     
     db.list('/guitars').valueChanges().subscribe(guitars => {
-      guitars.forEach(guitar => {
-        guitar['priceRON'] = (guitar['price'] * this.currency.rates.RON).toFixed(2); 
-      });
+      // guitars.forEach(guitar => {
+      //   guitar['priceRON'] = (guitar['price'] * this.currency.rates.RON).toFixed(2); 
+      // });
       this.guitars = guitars;
       this.search = guitars;
     });
   }
-
+O
   
 
   ngOnInit(): void {

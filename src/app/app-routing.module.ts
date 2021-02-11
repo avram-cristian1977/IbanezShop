@@ -13,6 +13,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {AdminComponent} from './admin/admin.component';
 import {AdminCreateComponent} from "./admin-create/admin-create.component"
 import {UpdateComponent} from './update/update.component'
+import { DetailsComponent } from './details/details.component';
  
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path : 'home', component:HomeComponent},
   {path : 'about', component:AboutComponent},
   {path : 'products', component:ProductsComponent},
+  {path : 'details/:id', component:DetailsComponent},
   {path : 'products/electric', component:ElectricComponent},
   {path : 'products/acoustic', component:AcousticComponent},
   {path : 'products/classical', component:ClassicalComponent},

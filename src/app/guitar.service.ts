@@ -2,6 +2,8 @@ import { Injectable, Input } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { GuitarsComponent } from './guitars/guitars.component';
 import { Guitar } from './guitarInterface';
+import { of, Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +27,14 @@ export class GuitarService {
 
   updateGuitar(key: string, data: any[]) {
     this.guiatarRef.update(key,data).catch(error => {console.log(error)});
+
+    
   }
 
+  // getGuitar(key: string, data: any[]){
+  //   this.guiatarRef.
+  // }
+
+
+
 }
-
-
