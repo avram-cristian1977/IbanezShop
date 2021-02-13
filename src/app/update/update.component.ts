@@ -14,21 +14,20 @@ export class UpdateComponent implements OnInit {
   guitar: any[];
   db_key: any;
 
-  constructor(private guitarService : GuitarService, private route: ActivatedRoute) { 
+  constructor(private guitarService : GuitarService, private route: ActivatedRoute) {
+    this.db_key = this.route.snapshot.paramMap.get('id');
+    this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+      guitars.forEach(guitar => {
+        if (this.db_key == guitar.payload.key) {
+          this.guitar = guitar.payload.val();
+          this.guitar['db_key'] = guitar.payload.key;
+        }
+      }); 
+    }); 
   }
 
   ngOnInit(): void { 
-    this.db_key = this.route.snapshot.paramMap.get('id');
-    this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
-    let i = 0;
-    guitars.forEach(guitar => {
-      if (this.db_key == guitar.payload.key) {
-        this.guitar = guitar.payload.val();
-        this.guitar['db_key'] = guitar.payload.key;
-        i++;
-      }
-    }); 
-  });
+    
   }
 
   updateGuitar(data: any[]) {

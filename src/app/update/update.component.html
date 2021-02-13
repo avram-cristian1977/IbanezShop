@@ -1,11 +1,10 @@
 <div class="container">
     <div class="row">
-        {{ guitar.brand }} sasasa
         <div class='col-6 offset-3'>
-            <form #guitar_form = "ngForm" (ngSubmit) = "updateGuitar(guitar_form.value)">
+            <form #guitar_form = "ngForm"  (ngSubmit) = "updateGuitar(guitar_form.value)">
                 <div class="for">
                     <label for="brand">Brand</label>
-                    <input type="text" name="brand" class="form-control" ngModel>
+                    <input type="text" name="brand" class="form-control" [(ngModel)]="guitar.brand">
                 </div>
                 <div>
                     <label for="model">Model</label>

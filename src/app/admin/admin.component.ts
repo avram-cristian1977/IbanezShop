@@ -22,11 +22,7 @@ export class AdminComponent implements OnInit {
   getGuitarList() {
     this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
       let i = 0;
-      guitars.forEach(guitar => {
-          this.guitars[i] = guitar.payload.val();
-          this.guitars[i]['db_key'] = guitar.payload.key;
-          i++;
-      }); 
+      
     })
   }
   

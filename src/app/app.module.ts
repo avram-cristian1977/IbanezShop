@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AngularFireModule } from 'angularfire2'; 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+
 import { FormsModule } from '@angular/forms';
 
 
@@ -52,6 +56,7 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    
     NgbModule,
     FormsModule,
     HttpClientModule

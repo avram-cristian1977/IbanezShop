@@ -31,9 +31,9 @@ export class GuitarService {
     
   }
 
-  // getGuitar(key: string, data: any[]){
-  //   this.guiatarRef.
-  // }
+  getGuitar(key: string){
+    return this.dbo.object('guitar/' + key).valueChanges();
+  }
 
 
 
