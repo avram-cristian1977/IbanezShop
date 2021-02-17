@@ -1,38 +1,37 @@
 <div class="container">
     <div class="row">
         <div class='col-6 offset-3'>
-            <form #guitar_form = "ngForm"  (ngSubmit) = "updateGuitar(guitar_form.value)">
+            <form (ngSubmit)='updateGuitar()'>
                 <div class="for">
                     <label for="brand">Brand</label>
-                    <input type="text" name="brand" class="form-control" [(ngModel)]="guitar.brand">
+                    <input id='brand' type="text" name="brand" class="form-control" [(ngModel)]="brand">
                 </div>
                 <div>
                     <label for="model">Model</label>
-                    <input type="text" name="model"  class="form-control" ngModel>
+                    <input id='model' type="text" name="model"  class="form-control" [(ngModel)]='model'>
                 </div>
                 <div>
                     <label for="color">Color</label>
-                    <input #guitar type="text" name="color"  class="form-control" ngModel>
+                    <input id='color' type="text" name="color"  class="form-control" [(ngModel)]='color'>
                 </div>
                 <div>
                     <label for="hasCase">Has Case</label>
-                    <select name="hasCase"  class="form-control" ngModel>
-                        <option value disabled>No option selected</option>
-                        <option value="true">True</option>
-                        <option value="false">False</option>
+                    <select name="hasCase" id='hasCase'  class="form-control" [(ngModel)]='hasCase'>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
                     </select>
                 </div>
                 <div>
                     <label for="noOfStrings">Number of Strings</label>
-                    <input type="text" name="noOfStrings"  class="form-control" ngModel>
+                    <input type="text" id='noOfStrings' name="noOfStrings"  class="form-control" [(ngModel)]='noOfStrings'>
                 </div>
                 <div>
                     <label for="price">Price</label>
-                    <input type="number" min="1" name="price"  class="form-control" ngModel>
+                    <input type="number" min="1" name="price" id='price' class="form-control" [(ngModel)]='price'>
                 </div>
                 <div>
                     <label for="type">Type</label>
-                    <select name="hasCase"  class="form-control" ngModel>
+                    <select name="hasCase" id='type' class="form-control" [(ngModel)]='type'>
                         <option value disabled>No option selected</option>
                         <option value="electric">Electric</option>
                         <option value="classical">Classical</option>
@@ -43,7 +42,7 @@
                 </div>
                 <div>
                     <label for="img" >Image URL</label>
-                    <input type="text" name="img"  class="form-control" ngModel>
+                    <input id='img' type="text" name="img"  class="form-control" [(ngModel)]='img'>
                 </div>
                 <div>
                     <button type="submit" class='btn btn-primary'>Save</button>

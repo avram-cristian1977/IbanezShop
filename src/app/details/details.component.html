@@ -1,1 +1,4 @@
-{{ (guitar | async)?.brand }}
+<div *ngIf='guitar'>
+    {{guitar.brand}}
+<img src='{{guitar.img}}'>
+</div>

@@ -3,7 +3,9 @@ export interface Guitar {
     brand:string;
     type:string;
     model:string;
-    hasCase:boolean;
+    hasCase:string;
     price:number;
     noOfStrings:number;
+    img: string;
+    color: string;
 }

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,37 +10,48 @@
 <body>
 
   <h2 style="display: flex; justify-content: center;">Sort guitars</h2>
-<!-- 
+  <!-- 
   dropdown -->
 
-<div style=" margin: auto; width: 30%; border-radius: 15px; border: 3px solid rgb(79, 83, 70); padding: 10px;">
-  <h6>Sort by Color</h6>
-    <select [(ngModel)]="selectedGuitar" (ngModelChange) = 'onGuitarSelected($event)'>
-      <option *ngFor="let color of colors">
-        {{color}}
-      </option>
-    </select>
-</div>
+  <div style=" margin: auto; width: 30%; border-radius: 15px; border: 3px solid rgb(79, 83, 70); padding: 10px;">
+    <div style="display: inline-block">
+      <h6>Sort by Color</h6>
+      <select [(ngModel)]="selectedColor" (ngModelChange)='onGuitarSelected($event)'>
+        <option *ngFor="let color of colors">
+          {{color}}
+        </option>
+      </select>
+    </div>
+    <div style="display: inline-block;">
+      <h6>Sort by Color</h6>
+      <select [(ngModel)]="selectedType" (ngModelChange)='filterByType($event)'>
+        <option *ngFor="let type of types">
+          {{type}}
+        </option>
+      </select>
+    </div>
+  </div>
 
 
 
-<div class="sortButtons">
-  <button (click) = "sortByPrice()">Sort Guitars by <span>PRICE</span></button>
-  <button (click) = "sortById()">Sort Guitars by <span>ID</span></button>
-  <button (click) = "filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button>
-  <!-- <button (click) = "filterByColorBlacks()">Filter Guitars by <span>color black</span></button> -->
-  <button (click) = "resetFilter()">Reset Filters</button>
-</div>
+  <div class="sortButtons">
+    <button (click)="sortByPrice()">Sort Guitars by <span>PRICE</span></button>
+    <button (click)="sortById()">Sort Guitars by <span>ID</span></button>
+    <button (click)="filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button>
+    <!-- <button (click) = "filterByColorBlacks()">Filter Guitars by <span>color black</span></button> -->
+    <button (click)="resetFilter()">Reset Filters</button>
+  </div>
 
-<div class="container">
-  <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <ul *ngFor="let guitar of guitars">
-            <li id="guitarCard">
-              <a routerLink="/details/{{guitar.db_key}}">
-              
-      
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div *ngIf='guitars.length == 0'>No matching guitars for selection</div>
+        <ul *ngFor="let guitar of guitars">
+          <li id="guitarCard">
+            <a routerLink="/details/{{guitar.db_key}}">
+
+
               <img src="{{guitar.img}}">
               <h6>
                 <p>{{guitar.brand}} </p>
@@ -54,15 +63,15 @@
                 <p>price {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
               </h6>
             </a>
-            </li>
-          </ul> 
-        </div>
-        <div class="col-3"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3"></div>
+    </div>
   </div>
-</div>
 
   <div>
-    
+
   </div>
 
 

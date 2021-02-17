@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Guitar } from '../guitarInterface'
-import { AngularFireDatabase } from 'angularfire2/database';
-import { GuitarsComponent } from '../guitars/guitars.component';
 import { CurrencyService } from '../currency.service';
 import { GuitarService } from '../guitar.service';
 
@@ -15,51 +12,63 @@ export class ProductsComponent implements OnInit {
   guitars: any[] = [];
   search: any[] = [];
   colors: any[] = [];
+  types: any[] = [];
+  hot_deal: any[] = [];
   currency: any;
-  selectedGuitar:string;
-  modified:string;
+  selectedColor: string;
+  selectedType: string;
+  modified: string;
 
   filteredByType: any[] = [];
 
-  constructor(db: AngularFireDatabase, currencyService: CurrencyService, guitarService: GuitarService) {
-    currencyService.getCurrency('RON').subscribe(currency => {
+  constructor(private currencyService: CurrencyService, private guitarService: GuitarService) {
+  }
+
+  ngOnInit(): void {
+    this.currencyService.getCurrency('RON').subscribe(currency => {
       this.currency = currency;
-      guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+      this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
         let i = 0;
         guitars.forEach(guitar => {
           this.guitars[i] = guitar.payload.val();
           this.guitars[i]['db_key'] = guitar.payload.key;
-          this.guitars[i]['priceRON'] = (guitar['price'] * this.currency.rates.RON).toFixed(2); 
-          if (this.colors.indexOf(guitar['color']) == -1) {
-            this.colors.push(guitar['color']);
+          this.guitars[i]['priceRON'] = (this.guitars[i]['price'] * this.currency.rates.RON).toFixed(2);
+          if (this.guitars[i]['hot_deal']) {
+            this.hot_deal = this.guitars[i];
+          }
+          if (this.colors.indexOf(this.guitars[i]['color']) == -1) {
+            this.colors.push(this.guitars[i]['color']);
+          }
+          if (this.types.indexOf(this.guitars[i]['type']) == -1) {
+            this.types.push(this.guitars[i]['type']);
           }
           i++;
-      }); 
-        this.guitars = guitars;
-        this.search = guitars;
-        this.selectedGuitar="red";
+        });
+        this.search = this.guitars;
+        this.selectedColor = "red";
+        this.selectedType = 'electric';
       });
     });
-    this.guitars.filter(guitar => {
-     
+    console.log(this.hot_deal);
+  }
+
+  onGuitarSelected(val: any) {
+    this.customFunction(val)
+  }
+
+  filterByType(val: string) {
+    this.guitars = this.guitars.filter(guitar => {
+      return guitar['type'] == val;
     });
-    
+    return;
   }
 
-  ngOnInit(): void {
-    
-  }
-
-  onGuitarSelected(val:any){
-      this.customFunction(val)
-  }
-
-  customFunction(val:any){
-      this.modified = "The guitar " + val + " was selected from DD";
-      let colors = [];
-      this.guitars = this.guitars.filter(guitar => {
-        return guitar['color'] == val;
-      });
+  customFunction(val: any) {
+    this.modified = "The guitar " + val + " was selected from DD";
+    let colors = [];
+    this.guitars = this.guitars.filter(guitar => {
+      return guitar['color'] == val;
+    });
     return;
 
   }
@@ -75,7 +84,7 @@ export class ProductsComponent implements OnInit {
   //   return;
   // }
 
-  resetFilter(){
+  resetFilter() {
     this.guitars = this.search;
     return;
   }

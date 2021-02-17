@@ -10,14 +10,12 @@ import { of, Observable } from 'rxjs';
 })
 export class GuitarService {
   private dbPath = '/guitars';
-  guiatarRef: AngularFireList<any> = null;
-  dbo: AngularFireDatabase;
+  guiatarRef: AngularFireList<Guitar> = null;
   constructor(private db: AngularFireDatabase) {
     this.guiatarRef = db.list(this.dbPath);
-    this.dbo = db;
   }
 
-  getGuitarList():AngularFireList<any> {
+  getGuitarList():AngularFireList<Guitar> {
     return this.guiatarRef;
   }
 
@@ -25,16 +23,7 @@ export class GuitarService {
     this.guiatarRef.remove(key).catch(error => {console.log(error)});
   }
 
-  updateGuitar(key: string, data: any[]) {
+  updateGuitar(key: string, data: Guitar) {
     this.guiatarRef.update(key,data).catch(error => {console.log(error)});
-
-    
   }
-
-  getGuitar(key: string){
-    return this.dbo.object('guitar/' + key).valueChanges();
-  }
-
-
-
 }

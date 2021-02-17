@@ -181,7 +181,18 @@ width: 27px;
 
   
 }
+#hotDeal{
+  padding: 20px;
+  border-radius: 20px;
+  animation: blinker 3s linear infinite;
+  
+}
 
+@keyframes blinker {
+  50% {
+    background-color: rgb(197, 15, 2);
+  }
+}
 body > div:nth-child(2) > div{
   height: 100px;
 }
@@ -329,6 +340,8 @@ body > div.container.bigNoDspl.pos > div{
   justify-content: center;
   margin-top: 60px;
 }
+
+
 
 }
 @media only screen and (min-width: 1000px){

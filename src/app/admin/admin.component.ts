@@ -14,16 +14,21 @@ export class AdminComponent implements OnInit {
   guitars: any[] = [];
   search: any[] = [];
 
-  filteredByType: any[] = [];
+  // filteredByType: any[] = [];
 
   constructor(private guitarService: GuitarService) {
   };
 
   getGuitarList() {
-    this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
-      let i = 0;
-      
-    })
+      this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+        let i = 0;
+        guitars.forEach(guitar => {
+          this.guitars[i] = guitar.payload.val();
+          this.guitars[i]['db_key'] = guitar.payload.key;
+          i++;
+      }); 
+      this.search = this.guitars;
+    });
   }
   
   deleteGuitar(key:string):void {

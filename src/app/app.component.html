@@ -112,7 +112,15 @@
         </div>
       </div>
       </div>
-      <div class="col-3"></div>
+      <div class="col-3">
+        <div id="hotDeal">
+
+          <div *ngIf='hot_deal'>
+            {{hot_deal.brand}}
+            <img src='{{hot_deal.img}}' style='width: 100%;'>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -123,7 +131,10 @@
       </div>
     </div>
   </div>
+  
   <router-outlet></router-outlet>
+
+  <a href="#" (click)='goBack()'>Back</a>
 
 
 
