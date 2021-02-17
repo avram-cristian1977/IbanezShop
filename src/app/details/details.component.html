@@ -1,4 +1,32 @@
+
 <div *ngIf='guitar'>
-    {{guitar.brand}}
-<img src='{{guitar.img}}'>
+<div class="container" >
+    <div class="row">
+        <div class="col-9" >
+           
+            
+                   
+                       <!-- {{guitar.brand}} -->
+                       
+                           <img src='{{guitar.img}}'  >
+
+                   
+                
+           
+        </div>
+        <div class="col-3">
+            <h6>
+                <p>{{guitar.brand}} </p>
+                <p>Model: {{guitar.model}} </p>
+                <p>Guitar type: {{guitar.type}} </p>
+
+                <p *ngIf="guitar.hasCase" >Has case: Yes </p>
+                <p *ngIf="!guitar.hasCase" >Has case: No </p>
+                <p>No of strings: {{guitar.noOfStrings}} </p>
+                <p>Color: {{guitar.color}} </p>
+                <p>Price: {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
+              </h6>
+        </div>
+    </div>
+</div>
 </div>

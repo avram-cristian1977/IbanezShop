@@ -113,13 +113,19 @@
       </div>
       </div>
       <div class="col-3">
+       
         <div id="hotDeal">
 
           <div *ngIf='hot_deal'>
-            {{hot_deal.brand}}
+            <p id="hot_deal">
+              HOT DEAL
+            </p>
+            
+            {{hot_deal.brand }} {{hot_deal.model }} price: {{hot_deal.price }} <span>&euro;</span>!!!
             <img src='{{hot_deal.img}}' style='width: 100%;'>
           </div>
         </div>
+    
       </div>
     </div>
   </div>
