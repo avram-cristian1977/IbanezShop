@@ -13,7 +13,7 @@
   <!-- 
   dropdown -->
 
-  <div style=" margin: auto; width: 30%; border-radius: 15px; border: 3px solid rgb(79, 83, 70); padding: 10px;">
+  <div class="sort_options">
     <div style="display: inline-block">
       <h6>Sort by Color</h6>
       <select [(ngModel)]="selectedColor" (ngModelChange)='onGuitarSelected($event)'>
@@ -23,7 +23,7 @@
       </select>
     </div>
     <div style="display: inline-block;">
-      <h6>Sort by Color</h6>
+      <h6>Sort by Type</h6>
       <select [(ngModel)]="selectedType" (ngModelChange)='filterByType($event)'>
         <option *ngFor="let type of types">
           {{type}}
@@ -37,7 +37,7 @@
   <div class="sortButtons">
     <button (click)="sortByPrice()">Sort Guitars by <span>PRICE</span></button>
     <button (click)="sortById()">Sort Guitars by <span>ID</span></button>
-    <button (click)="filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button>
+    <!-- <button (click)="filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button> -->
     <!-- <button (click) = "filterByColorBlacks()">Filter Guitars by <span>color black</span></button> -->
     <button (click)="resetFilter()">Reset Filters</button>
   </div>
@@ -45,7 +45,7 @@
   <div class="container">
     <div class="row">
       <div class="col-1"></div>
-      <div class="col-10">
+      <div class="col-10 ">
         <div *ngIf='guitars.length == 0'>No matching guitars for selection</div>
         <ul *ngFor="let guitar of guitars">
           <li id="guitarCard">
@@ -55,12 +55,14 @@
               <img src="{{guitar.img}}">
               <h6>
                 <p>{{guitar.brand}} </p>
-                <p>guitar model {{guitar.model}} </p>
+                <p>Guitar model: {{guitar.model}} </p>
                 
-                <p>price {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
+                <p>Price: {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
               </h6>
             </a>
+            <hr>
           </li>
+          
         </ul>
       </div>
       <div class="col-3"></div>

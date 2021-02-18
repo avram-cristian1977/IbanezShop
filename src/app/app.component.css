@@ -183,6 +183,15 @@ width: 27px;
 
   
 }
+a:hover{
+  text-decoration: none;
+}
+a p {
+  
+  color: rgb(104, 6, 6);
+  font-weight: bold;
+
+}
 
 #hot_deal_txt{
  font-family: Georgia, 'Times New Roman', Times, serif;
@@ -190,10 +199,15 @@ width: 27px;
 }
 #hotDeal{
   margin-left: 60px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   animation: blinker 3s linear infinite;
   margin-bottom: 30px;
+  
+}
+
+#hot_deal_model{
+  display: block;
   
 }
 
@@ -202,9 +216,15 @@ width: 27px;
   font-size: 15px;
 }
 
+#priceHotDeal{
+  color: brown;
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 @keyframes blinker {
   50% {
-    background-color: rgb(197, 15, 2);
+    background-color: rgb(54, 54, 39);
   }
 }
 body > div:nth-child(2) > div{

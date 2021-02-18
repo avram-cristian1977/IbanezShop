@@ -23,43 +23,45 @@ export class DetailsComponent implements OnInit {
     private currencyService: CurrencyService,
     private route: ActivatedRoute,
     private guitarService: GuitarService,
-    
-  )
-  {
-    
+
+  ) {
+
   }
 
-  
 
-  ngOnInit() { 
-    
-    this.db_key = this.route.snapshot.paramMap.get('id');
-    this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
-      guitars.forEach(guitar => {
-        if (this.db_key == guitar.payload.key) {
-          this.guitar = guitar.payload.val();
-          
-        }
+
+  ngOnInit() {
+    this.currencyService.getCurrency('RON').subscribe(currency => {
+      this.currency = currency;
+
+      this.db_key = this.route.snapshot.paramMap.get('id');
+      this.guitarService.getGuitarList().snapshotChanges().subscribe(guitars => {
+        guitars.forEach(guitar => {
+          if (this.db_key == guitar.payload.key) {
+            this.guitar = guitar.payload.val();
+            this.guitar['priceRON'] = (this.guitar['price'] * this.currency.rates.RON).toFixed(2);
+          }
+        });
       });
-    }); 
+    });
   }
 
 
 
 
-  
-
-//   updateGuitar(data: any[]) {
-//     this.guitarService.updateGuitar(this.db_key, data);
-// }
-
-// getGuitar(data:any[]){
-//   this.guitarService.getGuitar(this.db_key, data);
-// }
 
 
+  //   updateGuitar(data: any[]) {
+  //     this.guitarService.updateGuitar(this.db_key, data);
+  // }
 
- 
-  
+  // getGuitar(data:any[]){
+  //   this.guitarService.getGuitar(this.db_key, data);
+  // }
+
+
+
+
+
 
 }

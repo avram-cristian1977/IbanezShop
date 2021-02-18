@@ -45,8 +45,8 @@ export class ProductsComponent implements OnInit {
           i++;
         });
         this.search = this.guitars;
-        this.selectedColor = "red";
-        this.selectedType = 'electric';
+        this.selectedColor = "Select color";
+        this.selectedType = 'Select type';
       });
     });
     console.log(this.hot_deal);

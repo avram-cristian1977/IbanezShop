@@ -9,9 +9,13 @@ address, p{
     justify-content: center;
 }
 
-.map{
-    width: 200px;
-    height: 200px;
-    margin: 30px;
+
+.col-4 iframe{
+    width: 100%;
+    
+}
+
+iframe{
+    margin:20px 0 40px 0;
     
 }

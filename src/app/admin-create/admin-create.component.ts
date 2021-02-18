@@ -23,6 +23,7 @@ export class AdminCreateComponent implements OnInit {
     guitar.id = this.guitars.length > 0 ? Math.max(...this.guitars.map(guitar => guitar.id)) + 1 : 20;
     this.db.list('guitars').push(guitar);
     alert('Guitar created.');
+    window.location.href='/admin';
     return;
   }
 

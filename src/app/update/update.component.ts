@@ -59,6 +59,6 @@ export class UpdateComponent implements OnInit {
       id: this.id
     };
     this.guitarService.updateGuitar(dbKey, data);
-    
+    window.location.href='/admin';
   }
 }
