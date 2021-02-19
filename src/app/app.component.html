@@ -122,7 +122,12 @@
 
             <a routerLink="/details/{{hot_deal.db_key}}">
               <div>
-                <p id="hot_deal">HOT DEAL <span id="hot_deal_model">{{hot_deal.brand }}{{hot_deal.model }}</span> </p>
+                <p id="hot_deal">  
+                  <span id="hot_deal_text">HOT DEAL !!!</span>    
+                  <span id="hot_deal_model">
+                    {{hot_deal.brand }} {{hot_deal.model }}
+                  </span>
+                 </p>
 
                  <span id="priceHotDeal">{{hot_deal.price }} <span>&euro;</span>!!!</span> <span style="text-decoration: none; color: brown; margin: 10px;">{{hot_deal.priceRON }} RON</span>
                 <img src='{{hot_deal.img}}' style='width: 100%;'>

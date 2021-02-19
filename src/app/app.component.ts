@@ -48,7 +48,7 @@ export class AppComponent {
    });
  }
 
- goBack(): void {
-  this.location.back();
-}
+//  goBack(): void {
+//   this.location.back();
+// }
 }

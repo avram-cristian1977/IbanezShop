@@ -5,4 +5,8 @@ p{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(59, 68, 68);
 }
+.detailsInfo{
+    display: flex;
+    justify-content: center;
 
+}

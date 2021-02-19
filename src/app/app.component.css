@@ -198,12 +198,26 @@ a p {
  font-weight: bold;
 }
 #hotDeal{
+  
   margin-left: 60px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 60px 60px 10px 10px;
   animation: blinker 3s linear infinite;
   margin-bottom: 30px;
   
+}
+
+#hot_deal_text{
+ 
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  font-weight: bolder;
+  
+
+}
+
+#hotDeal p{
+  text-align: center;
 }
 
 #hot_deal_model{

@@ -12,10 +12,15 @@ address, p{
 
 .col-4 iframe{
     width: 100%;
+   
+    margin:20px 0 40px 0;
     
 }
 
-iframe{
-    margin:20px 0 40px 0;
-    
+
+
+.align{
+    display: flex;
+    justify-content: center;
+
 }
