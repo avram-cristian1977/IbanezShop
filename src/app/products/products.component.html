@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-1 "></div>
       <div class="col-lg-10 col-xs-12 guitarCard">
-        <div *ngIf='guitars.length == 0'>No matching guitars for selection</div>
+        <div *ngIf='guitars.length == 0' style="text-align: center; color: brown;margin-bottom: 20px;">No matching guitars for selection</div>
         <ul *ngFor="let guitar of guitars">
           <li id="guitarCard">
             <a routerLink="/details/{{guitar.db_key}}">

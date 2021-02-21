@@ -49,7 +49,7 @@ export class ProductsComponent implements OnInit {
         this.selectedType = 'Select type';
       });
     });
-    console.log(this.hot_deal);
+    console.log("hot_deal", this.hot_deal);
   }
 
   onGuitarSelected(val: any) {

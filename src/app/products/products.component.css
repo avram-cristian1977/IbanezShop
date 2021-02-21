@@ -88,7 +88,12 @@ li a:hover{
 
 .guitarCard{
   width: auto;
+  
 }
+
+ div.col-lg-10.col-xs-12.guitarCard > div{
+   text-align: center;
+ }
 
 .guitarCard img{
   width:300px;
