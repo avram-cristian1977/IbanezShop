@@ -79,10 +79,7 @@ export class ProductsComponent implements OnInit {
     return;
   }
 
-  // filterByColorBlacks() {
-  //   this.guitars = this.guitars.filter((guitar) => { return guitar.color == "black" })
-  //   return;
-  // }
+  
 
   resetFilter() {
     this.guitars = this.search;

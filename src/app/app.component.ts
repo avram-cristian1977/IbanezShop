@@ -48,7 +48,5 @@ export class AppComponent {
    });
  }
 
-//  goBack(): void {
-//   this.location.back();
-// }
+
 }

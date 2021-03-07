@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <h2 style="display: flex; justify-content: center;">Sort guitars</h2>
+<div class='container'>
+  <div class='row'>
+    <div class='col-12'>
+      <h2 style="display: flex; justify-content: center;">Sort guitars</h2>
   <!-- 
   dropdown -->
 
@@ -37,8 +29,7 @@
   <div class="sortButtons">
     <button (click)="sortByPrice()">Sort Guitars by <span>PRICE</span></button>
     <button (click)="sortById()">Sort Guitars by <span>ID</span></button>
-    <!-- <button (click)="filterByTypeBass()">Filter Guitars by <span>TYPE bass</span></button> -->
-    <!-- <button (click) = "filterByColorBlacks()">Filter Guitars by <span>color black</span></button> -->
+    
     <button (click)="resetFilter()">Reset Filters</button>
   </div>
 
@@ -53,12 +44,12 @@
 
 
               <img src="{{guitar.img}}">
-              <h6>
+              
                 <p>{{guitar.brand}} </p>
                 <p>Guitar model: {{guitar.model}} </p>
                 
                 <p>Price: {{guitar.price}} <span>&euro;</span> {{guitar.priceRON}} RON </p>
-              </h6>
+              
             </a>
             <hr>
           </li>
@@ -68,12 +59,6 @@
       <div class="col-lg-1"></div>
     </div>
   </div>
-
-  <div>
-
+</div>
+    </div>
   </div>
-
-
-</body>
-
-</html>

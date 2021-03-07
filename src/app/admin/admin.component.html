@@ -5,8 +5,8 @@
             <ul *ngFor="let guitar of guitars">
               <li id="guitarCard" *ngIf="guitar">
         
-                <img src="{{guitar.img}}" style="width: 100px;">
-                <h6>
+                <img src="{{guitar.img}}" style="width: 300px;">
+                
                   <p>{{guitar.brand}} </p>
                   <p>guitar model {{guitar.model}} </p>
                   <p>guitar type {{guitar.type}} </p>
@@ -15,8 +15,8 @@
                   <p>color {{guitar.color}} </p>
                   <p>price {{guitar.price}} <span>&euro;</span> </p>
                   <a href="admin/update/{{ guitar.db_key }}" class='btn btn-info'>Update</a>
-                  <a  class='btn btn-danger' (click) = "deleteGuitar(guitar.db_key)">Delete</a>
-                </h6>
+                  <a  class='btn btn-danger' (click) = "openDialog(guitar.db_key)">Delete</a>
+                
               </li>
             </ul>
           </div>

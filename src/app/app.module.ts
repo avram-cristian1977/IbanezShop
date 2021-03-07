@@ -30,6 +30,10 @@ import { UpdateComponent } from './update/update.component';
 import { GuitarService } from './guitar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { CreateDialogComponent } from './create-dialog/create-dialog.component';
 
 
 @NgModule({
@@ -49,17 +53,20 @@ import { DetailsComponent } from './details/details.component';
     AdminComponent,
     AdminCreateComponent,
     UpdateComponent,
-    DetailsComponent
+    DetailsComponent,
+    DialogDeleteComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    
+    MatDialogModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [GuitarService],
   bootstrap: [AppComponent]
